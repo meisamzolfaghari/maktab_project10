@@ -1,6 +1,7 @@
 package ir.maktab.hibernate.projects.article.userinterface.menus;
 
 import ir.maktab.hibernate.projects.article.core.Actions;
+import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
 import ir.maktab.hibernate.projects.article.features.usermanagement.impls.ChangeBirthdayUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.usermanagement.impls.ChangeNationalCodeUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.usermanagement.impls.ChangePasswordUseCaseImpl;
@@ -9,7 +10,6 @@ import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.Cha
 import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.ChangeNationalCodeUseCase;
 import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.ChangePasswordUseCase;
 import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.ChangeUsernameUseCase;
-import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,7 +17,7 @@ import java.util.Arrays;
 public class EditProfileMenu extends Menu {
 
     public EditProfileMenu() {
-        super();
+        setActions();
     }
 
     @Override

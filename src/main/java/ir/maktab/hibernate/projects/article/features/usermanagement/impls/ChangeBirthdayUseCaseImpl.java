@@ -3,6 +3,7 @@ package ir.maktab.hibernate.projects.article.features.usermanagement.impls;
 import ir.maktab.hibernate.projects.article.core.share.AuthenticationService;
 import ir.maktab.hibernate.projects.article.entities.User;
 import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.ChangeBirthdayUseCase;
+import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.ChangePasswordUseCase;
 
 import java.util.Date;
 

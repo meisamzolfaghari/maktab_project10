@@ -1,6 +1,5 @@
 package ir.maktab.hibernate.projects.article.entities;
 
-import ir.maktab.hibernate.projects.article.core.config.hibernate.PersistenceEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,10 +15,12 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString(callSuper = true)
-
 @Entity
-public class User extends PersistenceEntity<Long> {
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(nullable = false)
     private String username;

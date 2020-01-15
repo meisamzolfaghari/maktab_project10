@@ -1,14 +1,14 @@
 package ir.maktab.hibernate.projects.article.userinterface.menus.manager;
 
 import ir.maktab.hibernate.projects.article.core.Actions;
+import ir.maktab.hibernate.projects.article.userinterface.functions.Articles;
+import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
+import ir.maktab.hibernate.projects.article.userinterface.menus.Menu;
 import ir.maktab.hibernate.projects.article.entities.Article;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.impls.FindAllArticleToPublishByManagerUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.impls.PublishArticleUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.usecases.FindAllArticleToPublishByManagerUseCase;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.usecases.PublishArticleUseCase;
-import ir.maktab.hibernate.projects.article.userinterface.functions.Articles;
-import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
-import ir.maktab.hibernate.projects.article.userinterface.menus.Menu;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,7 +18,7 @@ import java.util.List;
 public class ManagerPublishArticleMenu extends Menu {
 
     public ManagerPublishArticleMenu() {
-        super();
+        setActions();
     }
 
     @Override
@@ -51,8 +51,7 @@ public class ManagerPublishArticleMenu extends Menu {
             if (command.equals(Actions.choose.name())) {
                 chosenArticle = Articles.choose(articles);
                 if (chosenArticle != null) {
-                    Menu menu = new ManagerChoosePublishArticleMenu(chosenArticle);
-                    menu.execute();
+                    new ManagerChoosePublishArticleMenu(chosenArticle).execute();
                 }
             } else if (command.equals(Actions.publish.name())) {
                 chosenArticle = Articles.choose(articles);

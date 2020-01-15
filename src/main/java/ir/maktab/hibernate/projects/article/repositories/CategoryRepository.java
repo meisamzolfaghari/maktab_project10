@@ -3,7 +3,7 @@ package ir.maktab.hibernate.projects.article.repositories;
 import ir.maktab.hibernate.projects.article.core.config.hibernate.repository.CrudRepository;
 import ir.maktab.hibernate.projects.article.entities.Category;
 
-public class CategoryRepository extends CrudRepository<Category, Long> {
+public class CategoryRepository extends CrudRepository<Category , Long> {
 
     private static CategoryRepository categoryRepository;
 

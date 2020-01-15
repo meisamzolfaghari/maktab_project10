@@ -1,6 +1,8 @@
 package ir.maktab.hibernate.projects.article.userinterface.menus.admin;
 
 import ir.maktab.hibernate.projects.article.core.Actions;
+import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
+import ir.maktab.hibernate.projects.article.userinterface.menus.Menu;
 import ir.maktab.hibernate.projects.article.entities.User;
 import ir.maktab.hibernate.projects.article.features.usermanagement.impls.DeleteUserByAdminUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.usermanagement.impls.DemoteUserByAdminUseCaseImpl;
@@ -10,8 +12,6 @@ import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.Del
 import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.DemoteUserByAdminUseCase;
 import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.FindAllUserByAdminUseCase;
 import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.PromoteUserByAdminUseCase;
-import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
-import ir.maktab.hibernate.projects.article.userinterface.menus.Menu;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,7 +20,7 @@ import java.util.List;
 public class AdminUserMenu extends Menu {
 
     public AdminUserMenu() {
-        super();
+        setActions();
     }
 
     @Override
@@ -52,8 +52,7 @@ public class AdminUserMenu extends Menu {
             if (command.equals(Actions.choose.name())) {
                 chosenUser = Users.choose(users);
                 if (chosenUser != null) {
-                    Menu menu = new AdminChooseUserMenu(chosenUser);
-                    menu.execute();
+                    new AdminChooseUserMenu(chosenUser).execute();
                 }
             } else if (command.equals(Actions.promote.name())) {
                 chosenUser = Users.choose(users);

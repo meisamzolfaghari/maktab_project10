@@ -1,14 +1,13 @@
 package ir.maktab.hibernate.projects.article.core.config.hibernate.repository;
 
 import ir.maktab.hibernate.projects.article.core.config.hibernate.HibernateUtil;
-import ir.maktab.hibernate.projects.article.core.config.hibernate.PersistenceEntity;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
 import java.io.Serializable;
 import java.util.List;
 
-public abstract class CrudRepository<Entity extends PersistenceEntity, ID extends Serializable> {
+public abstract class CrudRepository<Entity, ID extends Serializable> {
 
     protected abstract Class<Entity> getEntityClass();
 

@@ -20,7 +20,7 @@ import java.util.List;
 public class TagMenu extends Menu {
 
     public TagMenu() {
-        super();
+        setActions();
     }
 
     @Override
@@ -47,8 +47,8 @@ public class TagMenu extends Menu {
             }
 
             if (command.equals(Actions.find.name())) {
-                Menu menu = new FindTagMenu(new FindTagByTitleUseCaseImpl().list(Tags.takeTitle()));
-                menu.execute();
+                new FindTagMenu(new FindTagByTitleUseCaseImpl()
+                        .list(Tags.takeTitle())).execute();
             } else if (command.equals(Actions.add.name())) {
                 AddTagUseCase addTagUseCase = new AddTagUseCaseImpl();
                 addTagUseCase.add(Tags.takeTitle());
@@ -60,7 +60,6 @@ public class TagMenu extends Menu {
                     deleteTagUseCase.delete(chosenTag);
                 }
             }
-
         }
     }
 

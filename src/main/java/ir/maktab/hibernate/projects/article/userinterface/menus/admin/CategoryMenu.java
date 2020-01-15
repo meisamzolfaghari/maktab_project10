@@ -1,6 +1,9 @@
 package ir.maktab.hibernate.projects.article.userinterface.menus.admin;
 
 import ir.maktab.hibernate.projects.article.core.Actions;
+import ir.maktab.hibernate.projects.article.userinterface.functions.Categories;
+import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
+import ir.maktab.hibernate.projects.article.userinterface.menus.Menu;
 import ir.maktab.hibernate.projects.article.entities.Category;
 import ir.maktab.hibernate.projects.article.features.categorymanagement.impls.AddCategoryUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.categorymanagement.impls.DeleteCategoryUseCaseImpl;
@@ -9,9 +12,6 @@ import ir.maktab.hibernate.projects.article.features.categorymanagement.impls.Fi
 import ir.maktab.hibernate.projects.article.features.categorymanagement.usecases.AddCategoryUseCase;
 import ir.maktab.hibernate.projects.article.features.categorymanagement.usecases.DeleteCategoryUseCase;
 import ir.maktab.hibernate.projects.article.features.categorymanagement.usecases.FindAllCategoryUseCase;
-import ir.maktab.hibernate.projects.article.userinterface.functions.Categories;
-import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
-import ir.maktab.hibernate.projects.article.userinterface.menus.Menu;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,7 +20,7 @@ import java.util.List;
 public class CategoryMenu extends Menu {
 
     public CategoryMenu() {
-        super();
+        setActions();
     }
 
     @Override
@@ -48,9 +48,8 @@ public class CategoryMenu extends Menu {
             }
 
             if (command.equals(Actions.find.name())) {
-                Menu menu = new FindCategoryMenu(new FindCategoryByTitleUseCaseImpl()
-                        .list(Categories.takeTitle()));
-                menu.execute();
+                new FindCategoryMenu(new FindCategoryByTitleUseCaseImpl()
+                        .list(Categories.takeTitle())).execute();
             } else if (command.equals(Actions.add.name())) {
                 AddCategoryUseCase addCategoryUseCase
                         = new AddCategoryUseCaseImpl();

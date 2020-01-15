@@ -1,6 +1,9 @@
 package ir.maktab.hibernate.projects.article.userinterface.menus.admin;
 
 import ir.maktab.hibernate.projects.article.core.Actions;
+import ir.maktab.hibernate.projects.article.core.share.AuthenticationService;
+import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
+import ir.maktab.hibernate.projects.article.userinterface.menus.Menu;
 import ir.maktab.hibernate.projects.article.entities.User;
 import ir.maktab.hibernate.projects.article.features.usermanagement.impls.DeleteUserByAdminUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.usermanagement.impls.DemoteUserByAdminUseCaseImpl;
@@ -8,8 +11,6 @@ import ir.maktab.hibernate.projects.article.features.usermanagement.impls.Promot
 import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.DeleteUserByAdminUseCase;
 import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.DemoteUserByAdminUseCase;
 import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.PromoteUserByAdminUseCase;
-import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
-import ir.maktab.hibernate.projects.article.userinterface.menus.Menu;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,8 +20,8 @@ public class AdminChooseUserMenu extends Menu {
     private User chosenUser;
 
     public AdminChooseUserMenu(User chosenUser) {
-        super();
         this.chosenUser = chosenUser;
+        setActions();
     }
 
     @Override

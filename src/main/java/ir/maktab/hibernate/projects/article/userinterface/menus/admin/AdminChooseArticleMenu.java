@@ -1,6 +1,7 @@
 package ir.maktab.hibernate.projects.article.userinterface.menus.admin;
 
 import ir.maktab.hibernate.projects.article.core.Actions;
+import ir.maktab.hibernate.projects.article.core.share.AuthenticationService;
 import ir.maktab.hibernate.projects.article.entities.Article;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.impls.DeleteArticleUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.impls.PublishArticleUseCaseImpl;
@@ -21,8 +22,8 @@ public class AdminChooseArticleMenu extends Menu {
     private Article chosenArticle;
 
     public AdminChooseArticleMenu(Article chosenArticle) {
-        super();
         this.chosenArticle = chosenArticle;
+        setActions();
     }
 
     @Override
@@ -70,8 +71,7 @@ public class AdminChooseArticleMenu extends Menu {
         System.out.println("\t+---------------------------------------------------------------+");
         if (!chosenArticle.isPublished())
             System.out.println("\t|  publish         ---->    Publish Article.                    |");
-        else if (chosenArticle.isPublished())
-            System.out.println("\t|  unpublish       ---->    UnPublish Article.                  |");
+        else System.out.println("\t|  unpublish       ---->    UnPublish Article.                  |");
         System.out.println("\t|  delete          ---->    Delete Article.                     |");
         System.out.println("\t|  back            ---->    Back to Last Menu.                  |");
         System.out.println("\t|  exit            ---->    Exit.                               |");
@@ -87,8 +87,7 @@ public class AdminChooseArticleMenu extends Menu {
                         , Actions.exit.name()));
         if (!chosenArticle.isPublished())
             actions.add(Actions.publish.name());
-        else if (chosenArticle.isPublished())
-            actions.add(Actions.unpublish.name());
+        else actions.add(Actions.unpublish.name());
     }
 
 }

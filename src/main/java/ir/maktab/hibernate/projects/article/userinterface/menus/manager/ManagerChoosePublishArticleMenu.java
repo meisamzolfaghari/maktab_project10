@@ -1,14 +1,15 @@
 package ir.maktab.hibernate.projects.article.userinterface.menus.manager;
 
 import ir.maktab.hibernate.projects.article.core.Actions;
+import ir.maktab.hibernate.projects.article.core.share.AuthenticationService;
+import ir.maktab.hibernate.projects.article.userinterface.functions.Articles;
+import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
+import ir.maktab.hibernate.projects.article.userinterface.menus.Menu;
 import ir.maktab.hibernate.projects.article.entities.Article;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.impls.PublishArticleUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.impls.UnPublishArticleUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.usecases.PublishArticleUseCase;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.usecases.UnPublishArticleUseCase;
-import ir.maktab.hibernate.projects.article.userinterface.functions.Articles;
-import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
-import ir.maktab.hibernate.projects.article.userinterface.menus.Menu;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,8 +19,8 @@ public class ManagerChoosePublishArticleMenu extends Menu {
     private Article chosenArticle;
 
     public ManagerChoosePublishArticleMenu(Article chosenArticle) {
-        super();
         this.chosenArticle = chosenArticle;
+        setActions();
     }
 
     @Override
@@ -60,8 +61,7 @@ public class ManagerChoosePublishArticleMenu extends Menu {
         System.out.println("\t+---------------------------------------------------------------+");
         if (!chosenArticle.isPublished())
             System.out.println("\t|  publish         ---->    Publish Article.                    |");
-        else if (chosenArticle.isPublished())
-            System.out.println("\t|  unpublish       ---->    UnPublish Article.                  |");
+        else System.out.println("\t|  unpublish       ---->    UnPublish Article.                  |");
         System.out.println("\t|  back            ---->    Back to Last Menu.                  |");
         System.out.println("\t|  exit            ---->    Exit.                               |");
         System.out.println("\t+---------------------------------------------------------------+");
@@ -75,8 +75,7 @@ public class ManagerChoosePublishArticleMenu extends Menu {
                         , Actions.exit.name()));
         if (!chosenArticle.isPublished())
             actions.add(Actions.publish.name());
-        else if (chosenArticle.isPublished())
-            actions.add(Actions.unpublish.name());
+        else actions.add(Actions.unpublish.name());
 
     }
 

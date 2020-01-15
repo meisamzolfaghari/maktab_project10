@@ -1,12 +1,13 @@
 package ir.maktab.hibernate.projects.article.userinterface.menus.admin;
 
 import ir.maktab.hibernate.projects.article.core.Actions;
-import ir.maktab.hibernate.projects.article.entities.Tag;
-import ir.maktab.hibernate.projects.article.features.tagmanagement.impls.DeleteTagUseCaseImpl;
-import ir.maktab.hibernate.projects.article.features.tagmanagement.usecases.DeleteTagUseCase;
+import ir.maktab.hibernate.projects.article.core.share.AuthenticationService;
 import ir.maktab.hibernate.projects.article.userinterface.functions.Tags;
 import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
 import ir.maktab.hibernate.projects.article.userinterface.menus.Menu;
+import ir.maktab.hibernate.projects.article.entities.Tag;
+import ir.maktab.hibernate.projects.article.features.tagmanagement.impls.DeleteTagUseCaseImpl;
+import ir.maktab.hibernate.projects.article.features.tagmanagement.usecases.DeleteTagUseCase;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,8 +17,8 @@ public class FindTagMenu extends Menu {
     private List<Tag> tags;
 
     public FindTagMenu(List<Tag> tags) {
-        super();
         this.tags = tags;
+        setActions();
     }
 
 

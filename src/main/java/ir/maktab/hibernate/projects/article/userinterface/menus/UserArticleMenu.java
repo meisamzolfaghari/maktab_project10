@@ -1,6 +1,8 @@
 package ir.maktab.hibernate.projects.article.userinterface.menus;
 
 import ir.maktab.hibernate.projects.article.core.Actions;
+import ir.maktab.hibernate.projects.article.userinterface.functions.Articles;
+import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
 import ir.maktab.hibernate.projects.article.entities.Article;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.impls.AddArticleUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.impls.DeleteArticleUseCaseImpl;
@@ -8,8 +10,6 @@ import ir.maktab.hibernate.projects.article.features.articlemanagement.impls.Fin
 import ir.maktab.hibernate.projects.article.features.articlemanagement.usecases.AddArticleUseCase;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.usecases.DeleteArticleUseCase;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.usecases.FindUserArticleUseCase;
-import ir.maktab.hibernate.projects.article.userinterface.functions.Articles;
-import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,7 +18,7 @@ import java.util.List;
 public class UserArticleMenu extends Menu {
 
     public UserArticleMenu() {
-        super();
+        setActions();
     }
 
     @Override
@@ -47,8 +47,7 @@ public class UserArticleMenu extends Menu {
                 if (!articles.isEmpty()) {
                     Article chosenArticle = Articles.choose(articles);
                     if (chosenArticle != null) {
-                        Menu menu = new UserChooseArticleMenu(chosenArticle);
-                        menu.execute();
+                        new UserChooseArticleMenu(chosenArticle).execute();
                     }
                 } else
                     System.out.println("\t\u26A0 Add an Article First!");
@@ -57,8 +56,7 @@ public class UserArticleMenu extends Menu {
                 if (!articles.isEmpty()) {
                     Article chosenArticle = Articles.choose(articles);
                     if (chosenArticle != null) {
-                        Menu menu = new UserEditArticleMenu(chosenArticle);
-                        menu.execute();
+                        new UserEditArticleMenu(chosenArticle).execute();
                     }
                 } else
                     System.out.println("\t\u26A0 Add an Article First!");

@@ -22,7 +22,7 @@ import java.util.List;
 public class AdminArticleMenu extends Menu {
 
     public AdminArticleMenu() {
-        super();
+        setActions();
     }
 
     @Override
@@ -55,27 +55,23 @@ public class AdminArticleMenu extends Menu {
             if (command.equals(Actions.choose.name())) {
                 chosenArticle = Articles.choose(articles);
                 if (chosenArticle != null) {
-                    Menu menu = new AdminChooseArticleMenu(chosenArticle);
-                    menu.execute();
+                    new AdminChooseArticleMenu(chosenArticle).execute();
                 }
-            }
-
-            else if (command.equals(Actions.publish.name())) {
+            } else if (command.equals(Actions.publish.name())) {
                 chosenArticle = Articles.choose(articles);
                 if (chosenArticle != null) {
                     PublishArticleUseCase publishArticleUseCase
                             = new PublishArticleUseCaseImpl();
-                    publishArticleUseCase.publish(chosenArticle , currentDate);
+                    publishArticleUseCase.publish(chosenArticle, currentDate);
                 }
             } else if (command.equals(Actions.unpublish.name())) {
                 chosenArticle = Articles.choose(articles);
                 if (chosenArticle != null) {
                     UnPublishArticleUseCase unPublishArticleUseCase
                             = new UnPublishArticleUseCaseImpl();
-                    unPublishArticleUseCase.unPublish(chosenArticle , currentDate);
+                    unPublishArticleUseCase.unPublish(chosenArticle, currentDate);
                 }
-            }
-            else if (command.equals(Actions.delete.name())) {
+            } else if (command.equals(Actions.delete.name())) {
                 chosenArticle = Articles.choose(articles);
                 if (chosenArticle != null) {
                     DeleteArticleUseCase deleteArticleUseCase

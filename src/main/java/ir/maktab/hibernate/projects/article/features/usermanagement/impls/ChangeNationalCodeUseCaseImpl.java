@@ -3,6 +3,7 @@ package ir.maktab.hibernate.projects.article.features.usermanagement.impls;
 import ir.maktab.hibernate.projects.article.core.share.AuthenticationService;
 import ir.maktab.hibernate.projects.article.entities.User;
 import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.ChangeNationalCodeUseCase;
+import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.ChangePasswordUseCase;
 
 public class ChangeNationalCodeUseCaseImpl implements ChangeNationalCodeUseCase {
     @Override

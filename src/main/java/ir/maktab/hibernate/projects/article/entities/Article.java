@@ -1,15 +1,11 @@
 package ir.maktab.hibernate.projects.article.entities;
 
-import ir.maktab.hibernate.projects.article.core.config.hibernate.PersistenceEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -17,9 +13,12 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString(callSuper = true)
 @Entity
-public class Article extends PersistenceEntity<Long> {
+public class Article {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String title;
     private String brief;
@@ -53,4 +52,16 @@ public class Article extends PersistenceEntity<Long> {
         this.tags = tags;
     }
 
+    public Article(String title, String brief, String content, Date createDate, Date lastUpdateDate, Date publishDate, boolean isPublished, User user, Category category, List<Tag> tags) {
+        this.title = title;
+        this.brief = brief;
+        this.content = content;
+        this.createDate = createDate;
+        this.lastUpdateDate = lastUpdateDate;
+        this.publishDate = publishDate;
+        this.isPublished = isPublished;
+        this.user = user;
+        this.category = category;
+        this.tags = tags;
+    }
 }
