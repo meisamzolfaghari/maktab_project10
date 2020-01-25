@@ -1,7 +1,7 @@
 package ir.maktab.hibernate.projects.article.features.articlemanagement.impls;
 
-import ir.maktab.hibernate.projects.article.entities.Article;
-import ir.maktab.hibernate.projects.article.entities.User;
+import ir.maktab.hibernate.projects.article.model.Article;
+import ir.maktab.hibernate.projects.article.model.User;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.usecases.FindUserArticleUseCase;
 
 import java.util.ArrayList;

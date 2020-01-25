@@ -1,9 +1,8 @@
 package ir.maktab.hibernate.projects.article.features.usermanagement.impls;
 
 import ir.maktab.hibernate.projects.article.core.share.AuthenticationService;
-import ir.maktab.hibernate.projects.article.entities.User;
+import ir.maktab.hibernate.projects.article.model.User;
 import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.ChangeBirthdayUseCase;
-import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.ChangePasswordUseCase;
 
 import java.util.Date;
 
@@ -22,7 +21,8 @@ public class ChangeBirthdayUseCaseImpl implements ChangeBirthdayUseCase {
 
         loginUser.setBirthDay(newBirthday);
 
-        userRepository.update(loginUser);
+        userRepository.updateDb2(loginUser);
+        userRepository.updateDb(loginUser);
         User editedLoginUser = userRepository.findById(loginUser.getId());
 
         if (editedLoginUser.getBirthDay().equals(newBirthday)) {

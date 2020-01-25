@@ -1,7 +1,7 @@
 package ir.maktab.hibernate.projects.article.features.usermanagement.impls;
 
 import ir.maktab.hibernate.projects.article.core.share.AuthenticationService;
-import ir.maktab.hibernate.projects.article.entities.User;
+import ir.maktab.hibernate.projects.article.model.User;
 import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.FindAllUserByAdminUseCase;
 import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
 

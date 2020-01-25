@@ -3,7 +3,7 @@ package ir.maktab.hibernate.projects.article.userinterface.menus.admin;
 import ir.maktab.hibernate.projects.article.core.Actions;
 import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
 import ir.maktab.hibernate.projects.article.userinterface.menus.Menu;
-import ir.maktab.hibernate.projects.article.entities.User;
+import ir.maktab.hibernate.projects.article.model.User;
 import ir.maktab.hibernate.projects.article.features.usermanagement.impls.DeleteUserByAdminUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.usermanagement.impls.DemoteUserByAdminUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.usermanagement.impls.FinAllUserByAdminUseCaseImpl;

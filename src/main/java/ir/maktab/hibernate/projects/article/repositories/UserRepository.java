@@ -1,7 +1,7 @@
 package ir.maktab.hibernate.projects.article.repositories;
 
 import ir.maktab.hibernate.projects.article.core.config.hibernate.repository.CrudRepository;
-import ir.maktab.hibernate.projects.article.entities.User;
+import ir.maktab.hibernate.projects.article.model.User;
 
 public class UserRepository extends CrudRepository<User , Long> {
     private static UserRepository userRepository;

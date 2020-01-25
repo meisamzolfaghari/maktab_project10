@@ -1,6 +1,6 @@
 package ir.maktab.hibernate.projects.article.features.tagmanagement.impls;
 
-import ir.maktab.hibernate.projects.article.entities.Tag;
+import ir.maktab.hibernate.projects.article.model.Tag;
 import ir.maktab.hibernate.projects.article.features.tagmanagement.usecases.DeleteTagUseCase;
 
 public class DeleteTagUseCaseImpl implements DeleteTagUseCase {
@@ -11,7 +11,9 @@ public class DeleteTagUseCaseImpl implements DeleteTagUseCase {
             System.out.println("\t\u274c Failed to Delete Tag! Tag Error.\n");
             return false;
         }
-        tagRepository.remove(tagToDelete);
+
+        tagRepository.removeDb2(tagToDelete);
+        tagRepository.removeDb(tagToDelete);
 
         if (!tagRepository.findAll().contains(tagToDelete)) {
             System.out.println("\t\u274c Failed to Delete Tag! This Tag doesn't Exist.\n");

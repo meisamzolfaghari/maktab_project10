@@ -2,8 +2,8 @@ package ir.maktab.hibernate.projects.article.features.usermanagement.impls;
 
 import ir.maktab.hibernate.projects.article.core.AllRoles;
 import ir.maktab.hibernate.projects.article.core.share.AuthenticationService;
-import ir.maktab.hibernate.projects.article.entities.Role;
-import ir.maktab.hibernate.projects.article.entities.User;
+import ir.maktab.hibernate.projects.article.model.Role;
+import ir.maktab.hibernate.projects.article.model.User;
 import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.DemoteUserByAdminUseCase;
 import ir.maktab.hibernate.projects.article.userinterface.functions.Roles;
 import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
@@ -46,7 +46,9 @@ public class DemoteUserByAdminUseCaseImpl implements DemoteUserByAdminUseCase {
 
         userRoles.remove(Roles.getManagerRole());
         user.setRoles(userRoles);
-        userRepository.update(user);
+
+        userRepository.updateDb2(user);
+        userRepository.updateDb(user);
         if (!Users.isManager(userRepository.findById(user.getId()))) {
             System.out.println("\t\u2714 User Successfully Demoted to Writer.\n");
             return true;

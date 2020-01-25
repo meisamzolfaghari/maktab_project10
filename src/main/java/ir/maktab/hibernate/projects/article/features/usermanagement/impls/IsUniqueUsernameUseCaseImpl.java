@@ -1,6 +1,6 @@
 package ir.maktab.hibernate.projects.article.features.usermanagement.impls;
 
-import ir.maktab.hibernate.projects.article.entities.User;
+import ir.maktab.hibernate.projects.article.model.User;
 import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.IsUniqueUsernameUseCase;
 
 public class IsUniqueUsernameUseCaseImpl implements IsUniqueUsernameUseCase {

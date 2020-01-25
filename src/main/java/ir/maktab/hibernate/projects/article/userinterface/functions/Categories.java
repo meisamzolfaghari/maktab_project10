@@ -1,6 +1,6 @@
 package ir.maktab.hibernate.projects.article.userinterface.functions;
 
-import ir.maktab.hibernate.projects.article.entities.Category;
+import ir.maktab.hibernate.projects.article.model.Category;
 
 import java.util.List;
 import java.util.Scanner;
@@ -41,14 +41,12 @@ public class Categories {
 
     public static String takeTitle() {
         System.out.print("\t\u29bf Title >>> ");
-        String title = in1.nextLine();
-        return title;
+        return in1.nextLine();
     }
 
     public static String takeDescription() {
         System.out.print("\t\u29bf Description >>> ");
-        String description = in1.nextLine();
-        return description;
+        return in1.nextLine();
     }
 
 }

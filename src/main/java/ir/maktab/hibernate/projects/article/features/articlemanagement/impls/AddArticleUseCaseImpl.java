@@ -1,9 +1,9 @@
 package ir.maktab.hibernate.projects.article.features.articlemanagement.impls;
 
-import ir.maktab.hibernate.projects.article.entities.Article;
-import ir.maktab.hibernate.projects.article.entities.Category;
-import ir.maktab.hibernate.projects.article.entities.Tag;
-import ir.maktab.hibernate.projects.article.entities.User;
+import ir.maktab.hibernate.projects.article.model.Article;
+import ir.maktab.hibernate.projects.article.model.Category;
+import ir.maktab.hibernate.projects.article.model.Tag;
+import ir.maktab.hibernate.projects.article.model.User;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.usecases.AddArticleUseCase;
 
 import java.util.Date;
@@ -44,7 +44,10 @@ public class AddArticleUseCaseImpl implements AddArticleUseCase {
 
         Article articleToAdd = new Article(title , brief , content , currentDate
                 , false, user, category, tags);
-        articleToAdd.setId(articleRepository.save(articleToAdd));
+        articleToAdd.setId(articleRepository.saveDb(articleToAdd));
+
+        articleRepository.saveDb2(new Article(title , brief , content , currentDate
+                , false, user, category, tags));
 
         Article addedArticle = articleRepository.findById(articleToAdd.getId());
 

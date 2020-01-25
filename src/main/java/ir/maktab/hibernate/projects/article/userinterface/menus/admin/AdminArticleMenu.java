@@ -1,7 +1,7 @@
 package ir.maktab.hibernate.projects.article.userinterface.menus.admin;
 
 import ir.maktab.hibernate.projects.article.core.Actions;
-import ir.maktab.hibernate.projects.article.entities.Article;
+import ir.maktab.hibernate.projects.article.model.Article;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.impls.DeleteArticleUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.impls.FindAllArticleByAdminUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.impls.PublishArticleUseCaseImpl;

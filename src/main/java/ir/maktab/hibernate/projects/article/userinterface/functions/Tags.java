@@ -1,6 +1,6 @@
 package ir.maktab.hibernate.projects.article.userinterface.functions;
 
-import ir.maktab.hibernate.projects.article.entities.Tag;
+import ir.maktab.hibernate.projects.article.model.Tag;
 
 import java.util.List;
 import java.util.Scanner;
@@ -40,8 +40,7 @@ public class Tags {
 
     public static String takeTitle() {
         System.out.print("\t\u29bf Title to Find : ");
-        String title = in1.nextLine();
-        return title;
+        return in1.nextLine();
     }
 
 }

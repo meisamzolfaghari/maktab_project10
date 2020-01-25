@@ -1,6 +1,6 @@
 package ir.maktab.hibernate.projects.article.features.articlemanagement.impls;
 
-import ir.maktab.hibernate.projects.article.entities.Article;
+import ir.maktab.hibernate.projects.article.model.Article;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.usecases.ChangeArticleBriefUseCase;
 
 import java.util.Date;
@@ -25,7 +25,8 @@ public class ChangeArticleBriefUseCaseImpl implements ChangeArticleBriefUseCase 
         articleForEdit.setBrief(newBrief);
         articleForEdit.setLastUpdateDate(currentDate);
 
-        articleRepository.update(articleForEdit);
+        articleRepository.updateDb2(articleForEdit);
+        articleRepository.updateDb(articleForEdit);
 
         Article editedArticle = articleRepository.findById(articleForEdit.getId());
 

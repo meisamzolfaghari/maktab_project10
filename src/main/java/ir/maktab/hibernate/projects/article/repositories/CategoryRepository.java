@@ -1,7 +1,7 @@
 package ir.maktab.hibernate.projects.article.repositories;
 
 import ir.maktab.hibernate.projects.article.core.config.hibernate.repository.CrudRepository;
-import ir.maktab.hibernate.projects.article.entities.Category;
+import ir.maktab.hibernate.projects.article.model.Category;
 
 public class CategoryRepository extends CrudRepository<Category , Long> {
 

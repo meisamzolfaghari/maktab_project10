@@ -1,10 +1,9 @@
 package ir.maktab.hibernate.projects.article.userinterface.menus;
 
 import ir.maktab.hibernate.projects.article.core.Actions;
-import ir.maktab.hibernate.projects.article.core.share.AuthenticationService;
 import ir.maktab.hibernate.projects.article.userinterface.functions.Articles;
 import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
-import ir.maktab.hibernate.projects.article.entities.Article;
+import ir.maktab.hibernate.projects.article.model.Article;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.impls.DeleteArticleUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.usecases.DeleteArticleUseCase;
 

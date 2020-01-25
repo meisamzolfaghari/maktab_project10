@@ -1,7 +1,7 @@
 package ir.maktab.hibernate.projects.article.repositories;
 
 import ir.maktab.hibernate.projects.article.core.config.hibernate.repository.CrudRepository;
-import ir.maktab.hibernate.projects.article.entities.Tag;
+import ir.maktab.hibernate.projects.article.model.Tag;
 
 public class TagRepository extends CrudRepository<Tag , Long> {
     private static TagRepository tagRepository;

@@ -1,11 +1,10 @@
 package ir.maktab.hibernate.projects.article.userinterface.menus.admin;
 
 import ir.maktab.hibernate.projects.article.core.Actions;
-import ir.maktab.hibernate.projects.article.core.share.AuthenticationService;
 import ir.maktab.hibernate.projects.article.userinterface.functions.Categories;
 import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
 import ir.maktab.hibernate.projects.article.userinterface.menus.Menu;
-import ir.maktab.hibernate.projects.article.entities.Category;
+import ir.maktab.hibernate.projects.article.model.Category;
 import ir.maktab.hibernate.projects.article.features.categorymanagement.impls.DeleteCategoryUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.categorymanagement.usecases.DeleteCategoryUseCase;
 

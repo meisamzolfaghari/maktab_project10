@@ -1,6 +1,6 @@
 package ir.maktab.hibernate.projects.article.features.tagmanagement.impls;
 
-import ir.maktab.hibernate.projects.article.entities.Tag;
+import ir.maktab.hibernate.projects.article.model.Tag;
 import ir.maktab.hibernate.projects.article.features.tagmanagement.usecases.FindTagByTitleUseCase;
 
 import java.util.ArrayList;

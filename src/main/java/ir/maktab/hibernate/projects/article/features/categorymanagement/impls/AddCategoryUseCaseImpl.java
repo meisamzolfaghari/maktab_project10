@@ -1,6 +1,6 @@
 package ir.maktab.hibernate.projects.article.features.categorymanagement.impls;
 
-import ir.maktab.hibernate.projects.article.entities.Category;
+import ir.maktab.hibernate.projects.article.model.Category;
 import ir.maktab.hibernate.projects.article.features.categorymanagement.usecases.AddCategoryUseCase;
 
 import java.util.ArrayList;
@@ -22,9 +22,12 @@ public class AddCategoryUseCaseImpl implements AddCategoryUseCase {
             System.out.println("\t\u274c Failed to Add Category! This Category Already Exist.\n");
             return null;
         }
-            Category categoryToAdd = new Category(null , title, description , new ArrayList<>());
+        Category categoryToAdd = new Category(title, description, new ArrayList<>());
 
-        categoryToAdd.setId(categoryRepository.save(categoryToAdd));
+        categoryRepository.saveDb2(
+                new Category(title, description, new ArrayList<>()));
+
+        categoryToAdd.setId(categoryRepository.saveDb(categoryToAdd));
         Category addedCategory = categoryRepository.findById(categoryToAdd.getId());
         if (addedCategory != null)
             System.out.println("\t\u2714 Category successfully Added.\n");

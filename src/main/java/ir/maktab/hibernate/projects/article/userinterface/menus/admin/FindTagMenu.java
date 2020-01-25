@@ -1,11 +1,10 @@
 package ir.maktab.hibernate.projects.article.userinterface.menus.admin;
 
 import ir.maktab.hibernate.projects.article.core.Actions;
-import ir.maktab.hibernate.projects.article.core.share.AuthenticationService;
 import ir.maktab.hibernate.projects.article.userinterface.functions.Tags;
 import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
 import ir.maktab.hibernate.projects.article.userinterface.menus.Menu;
-import ir.maktab.hibernate.projects.article.entities.Tag;
+import ir.maktab.hibernate.projects.article.model.Tag;
 import ir.maktab.hibernate.projects.article.features.tagmanagement.impls.DeleteTagUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.tagmanagement.usecases.DeleteTagUseCase;
 

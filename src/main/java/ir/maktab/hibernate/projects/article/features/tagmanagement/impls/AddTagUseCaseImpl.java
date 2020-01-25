@@ -1,6 +1,6 @@
 package ir.maktab.hibernate.projects.article.features.tagmanagement.impls;
 
-import ir.maktab.hibernate.projects.article.entities.Tag;
+import ir.maktab.hibernate.projects.article.model.Tag;
 import ir.maktab.hibernate.projects.article.features.tagmanagement.usecases.AddTagUseCase;
 
 import java.util.ArrayList;
@@ -16,10 +16,11 @@ public class AddTagUseCaseImpl implements AddTagUseCase {
             System.out.println("\t\u274c Failed to Add Tag! this Tag exists.\n");
             return null;
         }
-        Tag tagToAdd = new Tag(null , title , new ArrayList<>());
+        Tag tagToAdd = new Tag( title , new ArrayList<>());
 
-        tagToAdd.setTitle(title);
-        tagToAdd.setId(tagRepository.save(tagToAdd));
+        tagRepository.saveDb2(new Tag( title , new ArrayList<>()));
+
+        tagToAdd.setId(tagRepository.saveDb(tagToAdd));
 
         Tag addedTag = tagRepository.findById(tagToAdd.getId());
         if (addedTag != null)

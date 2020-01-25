@@ -1,6 +1,6 @@
 package ir.maktab.hibernate.projects.article.features.categorymanagement.impls;
 
-import ir.maktab.hibernate.projects.article.entities.Category;
+import ir.maktab.hibernate.projects.article.model.Category;
 import ir.maktab.hibernate.projects.article.features.categorymanagement.usecases.DeleteCategoryUseCase;
 
 public class DeleteCategoryUseCaseImpl implements DeleteCategoryUseCase {
@@ -15,7 +15,8 @@ public class DeleteCategoryUseCaseImpl implements DeleteCategoryUseCase {
             return false;
         }
 
-        categoryRepository.remove(categoryToDelete);
+        categoryRepository.removeDb2(categoryToDelete);
+        categoryRepository.removeDb(categoryToDelete);
         Category deletedCategory = categoryRepository.findById(categoryToDelete.getId());
         if (deletedCategory == null) {
             System.out.println("\t\u2714 Category successfully Deleted.\n");

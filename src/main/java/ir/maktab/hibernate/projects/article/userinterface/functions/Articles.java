@@ -1,8 +1,8 @@
 package ir.maktab.hibernate.projects.article.userinterface.functions;
 
-import ir.maktab.hibernate.projects.article.entities.Article;
-import ir.maktab.hibernate.projects.article.entities.Category;
-import ir.maktab.hibernate.projects.article.entities.Tag;
+import ir.maktab.hibernate.projects.article.model.Article;
+import ir.maktab.hibernate.projects.article.model.Category;
+import ir.maktab.hibernate.projects.article.model.Tag;
 import ir.maktab.hibernate.projects.article.features.categorymanagement.impls.FindAllCategoryUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.categorymanagement.usecases.FindAllCategoryUseCase;
 import ir.maktab.hibernate.projects.article.features.tagmanagement.impls.FindAllTagUseCaseImpl;

@@ -1,7 +1,8 @@
 package ir.maktab.hibernate.projects.article.userinterface.functions;
 
 import ir.maktab.hibernate.projects.article.core.AllRoles;
-import ir.maktab.hibernate.projects.article.entities.User;
+import ir.maktab.hibernate.projects.article.model.Address;
+import ir.maktab.hibernate.projects.article.model.User;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -47,7 +48,6 @@ public class Users {
     public static void display(User user) {
 
         if (user == null) return;
-
         System.out.println(
                 ""
                         + "------------------------------------------------------------------------------------"
@@ -55,7 +55,8 @@ public class Users {
                         + "\n    Username= '" + user.getUsername()
                         + "'\n    National Code= '" + user.getNationalCode()
                         + "'\n    Birth Day= '" + new SimpleDateFormat("dd-MM-yyyy").format(user.getBirthDay())
-                        + "'\n    User Roles= '" + user.getRoles()
+                        + "'\n    User Roles= '" + user.getRoles().toString()
+                        + "'\n    User Address= '" + user.getAddress().toString()
                         + "'\n------------------------------------------------------------------------------------");
     }
 
@@ -148,6 +149,28 @@ public class Users {
 
     public static String takeNewNationalCode() {
         System.out.print("\t\u29bf New NationalCode >>> ");
+        return in.next();
+    }
+
+    public static String takeState() {
+        System.out.print("\t\u29bf State >>> ");
+        return in.next();
+    }
+
+    public static String takeCity() {
+        System.out.print("\t\u29bf City >>> ");
+        return in.next();
+    }
+
+
+    public static String takeStreet() {
+        System.out.print("\t\u29bf Street >>> ");
+        return in.next();
+    }
+
+
+    public static String takePostCode() {
+        System.out.print("\t\u29bf Postal Code >>> ");
         return in.next();
     }
 }

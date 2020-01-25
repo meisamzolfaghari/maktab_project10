@@ -1,6 +1,6 @@
 package ir.maktab.hibernate.projects.article.features.articlemanagement.impls;
 
-import ir.maktab.hibernate.projects.article.entities.Article;
+import ir.maktab.hibernate.projects.article.model.Article;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.usecases.UnPublishArticleUseCase;
 
 import java.util.Date;
@@ -27,7 +27,8 @@ public class UnPublishArticleUseCaseImpl implements UnPublishArticleUseCase {
         articleForUnPublish.setPublished(false);
         articleForUnPublish.setPublishDate(null);
 
-        articleRepository.update(articleForUnPublish);
+        articleRepository.updateDb2(articleForUnPublish);
+        articleRepository.updateDb(articleForUnPublish);
         unpublishedArticle = articleRepository.findById(articleForUnPublish.getId());
 
         if (!unpublishedArticle.isPublished() && unpublishedArticle.getPublishDate() == null)

@@ -1,6 +1,7 @@
 package ir.maktab.hibernate.projects.article.userinterface.menus;
 
 import ir.maktab.hibernate.projects.article.core.Actions;
+import ir.maktab.hibernate.projects.article.model.User;
 import ir.maktab.hibernate.projects.article.userinterface.functions.Users;
 import ir.maktab.hibernate.projects.article.features.usermanagement.impls.LoginUseCaseImpl;
 import ir.maktab.hibernate.projects.article.features.usermanagement.impls.RegisterUseCaseImpl;
@@ -38,7 +39,8 @@ public class FirstMenu extends Menu {
                 RegisterUseCase registerUseCase
                         = new RegisterUseCaseImpl();
                 registerUseCase.register(Users.takeUsername()
-                        , Users.takeNationalCode(), Users.takeBirthday());
+                        , Users.takeNationalCode(), Users.takeBirthday(), Users.takeState()
+                        , Users.takeCity() , Users.takeStreet() , Users.takePostCode());
             }
         }
     }

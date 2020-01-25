@@ -1,9 +1,8 @@
 package ir.maktab.hibernate.projects.article.features.usermanagement.impls;
 
 import ir.maktab.hibernate.projects.article.core.share.AuthenticationService;
-import ir.maktab.hibernate.projects.article.entities.User;
+import ir.maktab.hibernate.projects.article.model.User;
 import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.ChangeNationalCodeUseCase;
-import ir.maktab.hibernate.projects.article.features.usermanagement.usecases.ChangePasswordUseCase;
 
 public class ChangeNationalCodeUseCaseImpl implements ChangeNationalCodeUseCase {
     @Override
@@ -20,7 +19,8 @@ public class ChangeNationalCodeUseCaseImpl implements ChangeNationalCodeUseCase 
 
         loginUser.setNationalCode(newNationalCode);
 
-        userRepository.update(loginUser);
+        userRepository.updateDb2(loginUser);
+        userRepository.updateDb(loginUser);
         User editedLoginUser = userRepository.findById(loginUser.getId());
 
         if (editedLoginUser.getNationalCode().equals(newNationalCode)) {

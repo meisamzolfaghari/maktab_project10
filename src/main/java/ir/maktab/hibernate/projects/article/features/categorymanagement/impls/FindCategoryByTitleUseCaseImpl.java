@@ -1,7 +1,6 @@
 package ir.maktab.hibernate.projects.article.features.categorymanagement.impls;
 
-import ir.maktab.hibernate.projects.article.entities.Category;
-import ir.maktab.hibernate.projects.article.features.categorymanagement.usecases.FindAllCategoryUseCase;
+import ir.maktab.hibernate.projects.article.model.Category;
 import ir.maktab.hibernate.projects.article.features.categorymanagement.usecases.FindCategoryByTitleUseCase;
 
 import java.util.ArrayList;

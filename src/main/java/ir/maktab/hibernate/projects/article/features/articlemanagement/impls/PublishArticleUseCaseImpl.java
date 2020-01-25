@@ -1,6 +1,6 @@
 package ir.maktab.hibernate.projects.article.features.articlemanagement.impls;
 
-import ir.maktab.hibernate.projects.article.entities.Article;
+import ir.maktab.hibernate.projects.article.model.Article;
 import ir.maktab.hibernate.projects.article.features.articlemanagement.usecases.PublishArticleUseCase;
 
 import java.util.Date;
@@ -27,7 +27,8 @@ public class PublishArticleUseCaseImpl implements PublishArticleUseCase {
         articleForPublish.setPublished(true);
         articleForPublish.setPublishDate(currentDate);
 
-        articleRepository.update(articleForPublish);
+        articleRepository.updateDb2(articleForPublish);
+        articleRepository.updateDb(articleForPublish);
         publishedArticle = articleRepository.findById(articleForPublish.getId());
 
         if (publishedArticle.isPublished() && publishedArticle.getPublishDate().equals(currentDate))

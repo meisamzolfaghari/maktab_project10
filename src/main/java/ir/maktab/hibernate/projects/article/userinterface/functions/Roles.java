@@ -1,7 +1,7 @@
 package ir.maktab.hibernate.projects.article.userinterface.functions;
 
 import ir.maktab.hibernate.projects.article.core.AllRoles;
-import ir.maktab.hibernate.projects.article.entities.Role;
+import ir.maktab.hibernate.projects.article.model.Role;
 import ir.maktab.hibernate.projects.article.features.rolemanagement.impls.FindRoleByTitleUseCaseImpl;
 
 import java.util.List;
